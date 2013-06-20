@@ -1,0 +1,16 @@
+services:
+    nerdery_documentation.available_packages:
+        public: false
+        class: Nerdery\DocumentationBundle\Collection\PackageCollection
+        arguments:
+            - %nerdery_documentation.packages%
+    nerdery_documentation.package_locator:
+        public: false
+        class: Nerdery\DocumentationBundle\Locator\SymfonyPackageLocator
+        arguments:
+            - @kernel
+    nerdery_documentation.package_router:
+        class: Nerdery\DocumentationBundle\Router\PackageRouter
+        arguments:
+            - @nerdery_documentation.package_locator
+            - @nerdery_documentation.available_packages
