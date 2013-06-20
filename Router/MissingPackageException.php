@@ -2,8 +2,8 @@
 /**
  * MissingPackageException.php
  *
- * @copyright (c) 2013 The Nerdery
- * @license MIT <http://opensource.org/licenses/MIT>
+ * @copyright (c) 2013, Sierra Bravo Corp., dba The Nerdery, All rights reserved
+ * @license BSD-2-Clause
  */
 
 namespace Nerdery\DocumentationBundle\Router;
