@@ -62,8 +62,12 @@ class SymfonyPackageLocator implements PackageLocatorInterface
     public final function getIndexFilePath(Package $package)
     {
         $index = $package->getIndex();
-        $indexPath = $this->kernel->locateResource($index);
 
-        return $indexPath;
+        if ('@' === $index[0] && false !== strpos($index, '/')) {
+            $indexPath = $this->kernel->locateResource($index);
+            return $indexPath;
+        }
+
+        return $index;
     }
 }
