@@ -8,7 +8,7 @@
 
 namespace Nerdery\DocumentationBundle\Router;
 
-use Nerdery\DocumentationBundle\Collection\PackageCollection;
+use Nerdery\DocumentationBundle\Collection\AbstractCollection;
 use Nerdery\DocumentationBundle\Router\FileNotFoundException;
 use Nerdery\DocumentationBundle\Router\MissingPackageException;
 use Nerdery\DocumentationBundle\Locator\PackageLocatorInterface;
@@ -30,7 +30,7 @@ class PackageRouter
     private $packageLocator;
 
     /**
-     * @var PackageCollection The Collection of documentation packages available
+     * @var AbstractCollection The Collection of documentation packages available
      *     to the system
      */
     private $availablePackages;
@@ -40,12 +40,12 @@ class PackageRouter
      *
      * @param PackageLocatorInterface $packageLocator The service used for
      *     converting package paths into system paths
-     * @param PackageCollection $availablePackages The Collection of
+     * @param AbstractCollection $availablePackages The Collection of
      *     documentation packages available to the system
      */
     public function __construct(
         PackageLocatorInterface $packageLocator,
-        PackageCollection $availablePackages
+        AbstractCollection $availablePackages
     ) {
         $this->packageLocator = $packageLocator;
         $this->availablePackages = $availablePackages;

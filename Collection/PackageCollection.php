@@ -8,14 +8,7 @@
 
 namespace Nerdery\DocumentationBundle\Collection;
 
-use ArrayAccess;
-use ArrayIterator;
-use IteratorAggregate;
-use Countable;
-
 use Nerdery\DocumentationBundle\Entity\Package;
-
-use PhpCollection\CollectionInterface;
 
 /**
  * PackageCollection
@@ -24,7 +17,7 @@ use PhpCollection\CollectionInterface;
  *
  * @author Maxwell Vandervelde <Maxwell.Vandervelde@nerdery.com>
  */
-class PackageCollection implements Countable, ArrayAccess, IteratorAggregate
+class PackageCollection extends AbstractCollection
 {
     /**
      * @var array The array of packages available
