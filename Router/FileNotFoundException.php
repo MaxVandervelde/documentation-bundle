@@ -8,7 +8,7 @@
 
 namespace Nerdery\DocumentationBundle\Router;
 
-use JMS\AopBundle\Exception\RuntimeException;
+use RuntimeException;
 
 /**
  * FileNotFoundException
