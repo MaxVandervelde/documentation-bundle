@@ -10,7 +10,7 @@ namespace Nerdery\DocumentationBundle\Locator;
 
 use Nerdery\DocumentationBundle\Entity\Package;
 
-use Symfony\Component\HttpKernel\Kernel;
+use Symfony\Component\HttpKernel\KernelInterface;
 
 /**
  * Symfony Package Locator
@@ -29,9 +29,9 @@ class SymfonyPackageLocator implements PackageLocatorInterface
     /**
      * Construct a new Package Locator
      *
-     * @param Kernel $kernel The HTTP Kernel instance
+     * @param KernelInterface $kernel The HTTP Kernel instance
      */
-    public function __construct(Kernel $kernel)
+    public function __construct(KernelInterface $kernel)
     {
         $this->kernel = $kernel;
     }
